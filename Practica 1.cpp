@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 { 
-	std::cout<<"Hola 'holis'";
+	std::cout<<"Hola 'mundo'";
 
  	cout<<"Hola \"mundo\""<<endl;
  	cout<<"Adios\n";
