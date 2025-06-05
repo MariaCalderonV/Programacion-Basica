@@ -1,38 +1,53 @@
-#include <windows.h>
 #include <iostream>
+#include <windows.h>
 using namespace std;
+
+void gotoxy(int X, int Y) {
+		COORD coord;
+		coord.X = X;
+		coord.Y = Y;
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+using namespace std;
+}
+
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 	
-	int d,m,a;
-	cout<<"Dame una fecha en este formato:ddmmaaaa";
-	scanf("%2d%2d%4d", &d,&m,&a);
+	int uno,dos,tres,loquesea;
+	char nombre[20];
 	
-	switch(m)
+	gotoxy(25,2);
+	cout<<"INSTITUTO TECNOLOGICO DE DURANGO";
+	gotoxy(28,3);
+	cout<<"Fundamneto de programacion";
+	gotoxy(10,5);
+	cout<<"Dime tu nomre ";
+	gets(nombre);
+	gotoxy(10,6);cout<<"Dime el primer numero: "; cin>>uno;
+	gotoxy(10,7);cout<<"Dime el segundo numero: "; cin>>dos;
+	gotoxy(10,8);cout<<"Dime el tercer numero: "; cin>>tres;
+	
+	if (uno<dos and uno<tres)
 	{
-		case 1:
-		case 2:
-		case 3:
-		case 4:
-			printf("primer cuatrimestre");
-			break;
-		case 5:
-		case 6:
-		case 7:
-		case 8:
-			printf("segundo cuatrimestre");
-			break;
-		case 9:
-		case 10:
-		case 11:
-		case 12:
-			printf("tercer cuatrimestre");
-			break;
-			printf("Mes no valido");
+		loquesea=uno;
 	}
+	else
+	{ 
+		if (dos<uno and dos<tres)
+		{
+			loquesea=dos;
+		}
+		else
+		{
+			loquesea=tres;
+		}
+	}
+	gotoxy(10,10);
 	
-		return 0;
+	cout<<nombre<<" El menor de los tres numeros es: "<<loquesea;
+	
+	return 0;
 }
  //Maria Jose Calderon Valenzuela 24040976

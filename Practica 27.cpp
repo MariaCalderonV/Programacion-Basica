@@ -1,26 +1,54 @@
-#include <windows.h>
 #include <iostream>
+#include <windows.h>
 using namespace std;
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 
-	int n;
-	cout<<"Dame un numero para determinar si es par o impar: ";
-	cin>>n;
+	int d,m,a;
+	string mes;
 
-	if(n%2)
-		cout<<"El numero es impar\n";
-	else
-	cout<<"El numero es par\n";
-	system("pause");
+	cout<<"Dame una fecha en este formato: ddmmaaaa ";
+	 scanf("%2d%2d%4d",&d,&m,&a);
 
-	if(n%2==0)
-		cout<<"El numero es par\n";
-	else
-	cout<<"El numero es impar\n";
+    if (m==1)
+        mes="Enero";
+ 
+    if (m==2)
+        mes="Febrero";
+ 
+    if (m==3)
+        mes="Marzo";
+ 
+    if (m==4)
+        mes="Abril";
+ 
+    if (m==5)
+        mes="Mayo";
+ 
+    if (m==6)
+        mes="Junio";
+ 
+    if (m==7)
+        mes="Julio";
+ 
+    if (m==8)
+        mes="Agosto";
+ 
+    if (m==9)
+        mes="Septiembre";
+ 
+    if (m==10)
+        mes="Octubre";
+ 
+    if (m==11)
+        mes="Noviembre";
+ 
+    if (m==12)
+        mes="Diciembre";
 
+    cout<<"La fecha es: "<<d<<" de "<<mes<<" de "<<a;
 	return 0;
 }
  //Maria Jose Calderon Valenzuela 24040976

@@ -1,24 +1,25 @@
-#include <windows.h>
 #include <iostream>
+#include <stdio.h>   
+#include <windows.h> 
+
 using namespace std;
-int main()
-{
-    SetConsoleOutputCP(CP_UTF8);
+
+int main() {
     SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
 
-	int x,factorial;
+    int x, tabla;
 
-	cout<<"Dime un numero para calcular factorial: ";
-	cin>>factorial;
-	cout<<factorial;
+    cout << "Dime cuál tabla quieres generar: ";
+    cin >> tabla;
 
-	for (x=factorial-1;x>=1;x--){
-		cout<<"x"<<x;
-		factorial=factorial*x;
-	}
+    for (x = 1; x < 11; x++) {
+        cout << tabla << " X " << x << " = " << tabla * x << "\n";
+    }
 
-	cout<<"="<<factorial;
+    for (x = 1; x < 11; x++) {
+        printf("%2d X %d = %3d\n", tabla, x, tabla * x);
+    }
 
-	return 0;
+    return 0;
 }
- //Maria Jose Calderon Valenzuela 24040976

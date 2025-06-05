@@ -1,37 +1,27 @@
 #include <iostream>
 #include <windows.h>
+
 using namespace std;
 
-void gotoxy(int X, int Y) {
-		COORD coord;
-		coord.X = X;
-		coord.Y = Y;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-using namespace std;
+int main()
+{
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    float precion, precioD, pctd, descuento;
+
+    cout << "Dime el precio normal: ";
+    cin >> precion;
+
+    cout << "Dime el porcentaje de descuento: ";
+    cin >> pctd;
+
+    descuento = precion * pctd / 100;
+    precioD = precion - descuento;
+
+    cout << "El precio con descuento es: " << precioD;
+    cout << "\nEl precio con descuento es: " << precion * (100 - pctd) / 100;
+
+    return 0;
 }
-int main(){
-	SetConsoleOutputCP(CP_UTF8);
-	SetConsoleCP(CP_UTF8);
-
-	int nip=123;
-
-	int intento=0;
-	gotoxy(10,8);
-
-	cout<<"Teclea tu NIP: ";
-	cin>>intento;
-
-	if(intento==nip)
-	{
-		gotoxy(10,11);
-		cout<<"**Correcto**";
-	}
-	else
-	{
-		gotoxy(36,9);
-		cout<<"**Incorrecto**";
-	}
-
-	return 0;
-}
- //Maria Jose Calderon Valenzuela 24040976
+//Maria Jose Calderon Valenzuela 2440976

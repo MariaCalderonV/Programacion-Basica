@@ -1,25 +1,54 @@
+#include <windows.h>
 #include <iostream>
 using namespace std;
 int main()
 {
-    int n;
-    cout<<"Dame un numero para determinarlo si es positivo o negativo ";
-    cin>>n;
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+    string nombre;
     
-	n>0?cout<<"El numero es positivo\n":cout<<"El numero es negativo\n";
-	
-	system("pause");
-	
-	if(n>0)
-	cout<<"El numero es positivo\n";
-	else
-	
-	if(n<0)
-	cout<<"El numero es negativo\n";
-	else
-	
-	cout<<"El numero es cero";
-	
-	return 0;
+	int cal1, cal2, cal3, prom;
+    cout << "Dime tu nombre: ";
+    cin >> nombre;
+    cout << "Dame la calificación 1: ";
+    cin >> cal1;
+    cout << "Dame la calificación 2: ";
+    cin >> cal2;
+    cout << "Dame la calificación 3: ";
+    cin >> cal3;
+    prom = (cal1 + cal2 + cal3) / 3;
+    cout << nombre << ", tu promedio es: " << prom << ", y tu calificación final es: ";
+    
+	if (prom >= 90 && prom <= 100)
+    {
+        cout << "A";
+    }
+    else
+    {
+        if (prom >= 80 && prom <= 89)
+        {
+            cout << "B";
+        }
+        else
+        {
+            if (prom >= 70 && prom <= 79)
+            {
+                cout << "C";
+            }
+            else
+            {
+                if (prom >= 60 && prom <= 69)
+                {
+                    cout << "D";
+                }
+                else
+                {
+                    cout << "F";
+                }
+            }
+        }
+    }
+
+    return 0;
 }
  //Maria Jose Calderon Valenzuela 24040976

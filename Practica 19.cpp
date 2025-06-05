@@ -1,61 +1,51 @@
 #include <iostream>
 #include <windows.h>
 using namespace std;
-
-void gotoxy(int X, int Y) {
-		COORD coord;
-		coord.X = X;
-		coord.Y = Y;
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-using namespace std;
-}
-
 int main()
 {
+	
 	SetConsoleOutputCP(CP_UTF8);
 	SetConsoleCP(CP_UTF8);
+	
+	int cal;
+	cout<<"Dime una calificacion ";
+	cin>>cal;
+	
+	if (cal>=70)
+		cout<<"Aprobatoria\n";
 
-	int uno,dos,tres,mayor;
-	char nombre[20];
+	system("pause");
+	system("cls");
 
-	gotoxy(25,2);
-	cout<<"INSTITUTO TECNOLOGICO DE DURANGO";
-	gotoxy(28,3);
-	cout<<"Fundamneto de programacion";
-	gotoxy(10,5);
-	cout<<"Dime tu nomre ";
-	gets(nombre);
-	gotoxy(10,6);cout<<"Dime el primer numero: "; cin>>uno;
-	gotoxy(10,7);cout<<"Dime el segundo numero: "; cin>>dos;
-	gotoxy(10,8);cout<<"Dime el tercer numero: "; cin>>tres;
+	cout<<("Dime otra calificacion: ");
+	cin>>cal;
 
-	if (uno>dos && uno>tres)
+	if (cal>=70)
+		cout<<"suficiente\n";
+	else 
+		cout<<"No suficiente\n";
+	
+	system("pause");
+	system("cls");
+	
+	cout<<"Dime una calificacion: (Evaluando con ?) ";
+	cin>>cal;
+	cal>=70?cout<<"suficiente\n":cout<<"No suficiente\n";
+	cout<<"Dime una calificacion: ";
+	cin>>cal;
+
+	if (cal>=70)
 	{
-		mayor=uno;
+		printf("La calificacion obtenida es: ");
+		cout<<"Suficiente\n";
 	}
-	else
-	{ 
-		if (dos>uno && dos>tres)
-		{
-			mayor=dos;
-		}
-		else
-		{
-			if(tres>uno && tres>dos)
-			{
-				mayor=tres;
-			}
-			else
-				mayor=-1;
-		}
+	else 
+	{
+
+		printf("La calificacion obtenida es: ");
+		cout<<"No suficiente\n";
 	}
-	gotoxy(10,10);
-
-	if(mayor==-1)
-		cout<<"Los numeros son iguales";
-	else
-		cout<<nombre<<" El mayor de los tres numeros es: "<<mayor;
-
+	
 	return 0;
 }
  //Maria Jose Calderon Valenzuela 24040976

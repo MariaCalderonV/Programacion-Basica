@@ -1,34 +1,69 @@
+#include <stdio.h>
+#include <conio.h>
 #include <iostream>
 #include <windows.h>
+
 using namespace std;
-int main(){
-	SetConsoleOutputCP(CP_UTF8);
-	SetConsoleCP(CP_UTF8);
-	
-	int i,j,k;
-	char cad[80];
-	
-	puts("usando scanf con juegos de inspeccion\n");
-	puts("Dame una cadena con espacios");
-	scanf("%s",cad);
-	cout<<cad<<"\n";
-	fflush(stdin);
-	puts("dame una cadena de mayusculas y espacios"),
-	scanf("%[ABCDEFGHIJKLMNOPQRSTUVWXYZ]", cad);
-	puts(cad);
-	puts("dame una cadena de mayusculas, minusculas, Ñ, ñ y espacios\n");
-	fflush(stdin);
-	scanf("%[ a-zA-ZÑñ]",cad);
-	cout<<cad<<"\n";
-	puts("dame una cadena cualquiera caracter y termina en enter");
-	fflush(stdin);
-	scanf("%[^\n]",cad);
-	puts(cad);
-	puts("dame 3 numeros enteros de maximo 3 cifras");
-	scanf("%3d %3d %3d",&i,&j,&k);
-	printf("%d %d %d",i,j,k);
-	printf("\a");
-	
-	return 0;
+
+int main()
+{
+    int entera;
+    float flotante;
+    char letra, palabra[50]; 
+
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    cout << "Lectura de datos usando scanf\n";
+    cout << "Dame un valor entero: ";
+    fflush(stdin);
+    scanf("%d", &entera);
+
+    cout << "Dame un valor flotante: ";
+    fflush(stdin);
+    scanf("%f", &flotante);
+
+    cout << "Dame un valor char: ";
+    fflush(stdin);
+    scanf("%c", &letra);
+
+    cout << "Dame una cadena sin espacios: ";
+    fflush(stdin);
+    scanf("%s", palabra); 
+
+    puts("Impresión de los valores\n");
+    cout << entera << "\n";
+    cout << flotante << "\n";
+    putchar(letra);
+    putchar('\n');
+    puts(palabra);
+
+    system("pause");
+
+    cout << "Dame un entero, un flotante, un char y una cadena sin espacios: ";
+    fflush(stdin);
+    scanf("%d %f %c %s", &entera, &flotante, &letra, palabra); 
+
+    puts("Impresión de los valores\n");
+    cout << entera << "\n";
+    cout << flotante << "\n";
+    putchar(letra);
+    putchar('\n');
+    puts(palabra);
+    puts("\n");
+
+    cout << fixed; 
+    cout.precision(4);
+    cout << "Impresión con precisión.\n El valor flotante a 4 decimales: " << flotante << "\n";
+
+    cout.precision(2);
+    cout << "Con 2 decimales: " << flotante << endl; 
+
+    cout.precision(6);
+    cout << "Con 6 decimales: " << flotante << endl; 
+
+    cout.unsetf(ios::fixed); 
+    cout << "Sin formato fijo: " << flotante << endl; 
+
+    return 0;
 }
- //Maria Jose Calderon Valenzuela 24040976

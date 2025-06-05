@@ -1,22 +1,21 @@
 #include <iostream>
 #include <windows.h>
+
 using namespace std;
-int main()
-{
-	SetConsoleOutputCP(CP_UTF8);
-	SetConsoleCP(CP_UTF8);
-	
-	int nip=123;
-	int intento=0;
-	
-	cout<<"Teclea tu NIP: ";
-	cin>>intento;
-	
-	if(intento==nip)
-	{
-		printf("**Correcto**");
-	}
-	
-	return 0;
+
+int main(){
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    int minutos, horas, min2;
+    cout << "Dame la cantidad de minutos a convertir: ";
+    cin >> minutos;
+
+    horas = minutos / 60;
+    min2 = minutos % 60;
+
+    cout << minutos << " minutos equivale a " << horas << ":" << min2 << "\n";
+    printf("%2d minutos equivalen a %02d:%02d", minutos, horas, min2);
+
+    return 0;
 }
- //Maria Jose Calderon Valenzuela 24040976

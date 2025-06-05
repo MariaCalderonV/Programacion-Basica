@@ -1,59 +1,60 @@
-#include <windows.h>
 #include <iostream>
+#include <windows.h>
 using namespace std;
+
+void gotoxy(int X, int Y) {
+		COORD coord;
+		coord.X = X;
+		coord.Y = Y;
+		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+using namespace std;
+}
+
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 
-	int d,m,a;
-	cout<<"Dame una fecha en este formato:ddmmaaaa";
-	scanf("%2d%2d%4d", &d,&m,&a);
-	cout<<d<<" de ";
+	int uno,dos,tres,mayor;
+	char nombre[20];
 
-	switch(m)
+	gotoxy(25,2);
+	cout<<"INSTITUTO TECNOLOGICO DE DURANGO";
+	gotoxy(28,3);
+	cout<<"Fundamneto de programacion";
+	gotoxy(10,5);
+	cout<<"Dime tu nomre ";
+	gets(nombre);
+	gotoxy(10,6);cout<<"Dime el primer numero: "; cin>>uno;
+	gotoxy(10,7);cout<<"Dime el segundo numero: "; cin>>dos;
+	gotoxy(10,8);cout<<"Dime el tercer numero: "; cin>>tres;
+
+	if (uno>dos && uno>tres)
 	{
-		case 1:
-			printf("enero");
-			break;
-		case 2:
-			printf("febrero");
-			break;
-		case 3:
-			printf("marzo");
-			break;
-		case 4:
-			printf("abril");
-			break;
-		case 5:
-			printf("mayo");
-			break;
-		case 6:
-			printf("junio");
-			break;
-		case 7:
-			printf("julio");
-			break;
-		case 8:
-			printf("agosto");
-			break;
-		case 9:
-			printf("septiembre");
-			break;
-		case 10:
-			printf("octubre");
-			break;
-		case 11:
-			printf("noviembre");
-			break;
-		case 12:
-			printf("diciembre");
-			break;
-		default:
-			printf("Mes no valido");
+		mayor=uno;
 	}
+	else
+	{ 
+		if (dos>uno && dos>tres)
+		{
+			mayor=dos;
+		}
+		else
+		{
+			if(tres>uno && tres>dos)
+			{
+				mayor=tres;
+			}
+			else
+				mayor=-1;
+		}
+	}
+	gotoxy(10,10);
 
-	cout<<" de "<<a;
+	if(mayor==-1)
+		cout<<"Los numeros son iguales";
+	else
+		cout<<nombre<<" El mayor de los tres numeros es: "<<mayor;
 
 	return 0;
 }

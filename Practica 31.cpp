@@ -1,33 +1,59 @@
 #include <windows.h>
 #include <iostream>
-#include <math.h>
 using namespace std;
 int main()
 {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
- 
-    int cuantos,suma,x;
-    float promedio;
- 
-    cuantos=0;
-    suma=0;
- 
-    for (x=1;x!=-1;)
-    {
-    	cout<<"Dame un numero, -1 para terminar: ";
-    	cin>>x;
-    	cuantos++;
-    	suma=suma+x;
+
+	int d,m,a;
+	cout<<"Dame una fecha en este formato:ddmmaaaa";
+	scanf("%2d%2d%4d", &d,&m,&a);
+	cout<<d<<" de ";
+
+	switch(m)
+	{
+		case 1:
+			printf("enero");
+			break;
+		case 2:
+			printf("febrero");
+			break;
+		case 3:
+			printf("marzo");
+			break;
+		case 4:
+			printf("abril");
+			break;
+		case 5:
+			printf("mayo");
+			break;
+		case 6:
+			printf("junio");
+			break;
+		case 7:
+			printf("julio");
+			break;
+		case 8:
+			printf("agosto");
+			break;
+		case 9:
+			printf("septiembre");
+			break;
+		case 10:
+			printf("octubre");
+			break;
+		case 11:
+			printf("noviembre");
+			break;
+		case 12:
+			printf("diciembre");
+			break;
+		default:
+			printf("Mes no valido");
 	}
 
-	suma++;
-	cuantos=cuantos-1;
-	promedio=suma/cuantos;
-
-	cout<<" Fueron "<<cuantos<<" numeros\n";
-	cout<<" La sumatoria es= "<<suma<<"\n";
-	cout<<"El promedio es="<<promedio<<"\n";
+	cout<<" de "<<a;
 
 	return 0;
 }

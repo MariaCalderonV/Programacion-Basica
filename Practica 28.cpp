@@ -1,38 +1,99 @@
-#include <windows.h>
 #include <iostream>
+#include <windows.h>
 using namespace std;
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
 
-	float numerador,denominador;
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
 
-	cout<<"Dame el numerador (dividendo): ";
-	cin>>numerador;
-	cout<<"Dame el donominador (divisor): ";
-	cin>>denominador;
+	int d,m,a;
+	string mes;
 
-	if(denominador)
-	cout<<numerador<<"/"<<denominador<<"="<<numerador/denominador<<"\n";
+	cout<<"Dime el dia: ";
+	cin>>d;
+	cout<<"Dime el mes: ";
+	cin>>m;
+	cout<<"Dime el año: ";
+	cin>>a;
+
+	if(m==1){
+		mes="enero";
+}
 	else
-	cout<<"la division entre cero no esta permitida";
+	{
+		if(m==2){
+			mes="febrero";
+		}
+		else
+		{
+			if(m==3){
+				mes="marzo";
+			}
+			else
+			{
+				if(m==4){
+					mes="abril";
+				}
+				else
+				{
+					if(m==5){
+						mes="mayo";
+					}
+					else
+					{
+						if(m==6){
+							mes="junio";
+						}
+						else
+						{
+							if(m==7){
+								mes="julio";
+							}
+							else
+							{
+								if(m==8){
+									mes="agosto";
+								}
+								else
+								{
+									if(m==9){
+										mes="septiembre";
+									}
+									else
+									{
+										if(m==10){
+											mes="octubre";
+										}
+										else
+										{
+											if(m==11){
+												mes="noviembre";
+											}
+											else
+											{
+												if(m==12){
+													mes="Diciembre";
+												}
+												else
+												{
+													mes="No valido";
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
-	system("pause");
-	
-	if(denominador!=0)
-	cout<<numerador<<"/"<<denominador<<"="<<numerador/denominador<<"\n";
-	else
-	cout<<"la division entre cero no esta permitida";
 
-	system("pause");
-	
-	if(!denominador)
-	cout<<"La division sobre cero no se permite";
-	else
+	cout<<"la fecha es "<<d<<" de "<<mes<<" de "<<a;
 
-	cout<<numerador<<"/"<<denominador<<"="<<numerador/denominador<<"\n";
-
-	return 0;
+return 0;
 }
  //Maria Jose Calderon Valenzuela 24040976

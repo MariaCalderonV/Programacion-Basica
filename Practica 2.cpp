@@ -1,30 +1,15 @@
-#include <stdio.h>
-#include <conio.h>
+#include <stdio.h> 
+//#include<stdlib.h> //system
+//#include <iostream> //cin, cout
+#include <conio.h> 
+//using namespace std;
 int main()
 {
-	char cad[80];
-	char c;
-	
-	puts("Dame una cadena");
-	gets(cad);
-	puts("Ejemplo de impresion con puts");
-	puts(cad);
-	printf("ejemplo de impresion con printf: ");
-	printf(cad);
-	printf("\npresiona una tecla y continua automaticamente: ");
-	
-	c=getche();
-	puts("\n");
-	putchar(c);
-	puts("\n");
-	printf("presione una tecla y luego enter ");
-
-	c=getchar();
-	putchar(c);
-	printf("\npresiona una tecla y continua automaticamente: ");
-	fflush(stdin);
-	c=getch();
-	putchar(c);
-	return 0;
+    char cad[80]; 
+    char c; 
+    puts("dame una cadena"); 
+    gets(cad); 
+    puts("Ejemplo de impresión con puts");
+    puts(cad); 
+    return 0;
 }
- //Maria Jose Calderon Valenzuela 24040976

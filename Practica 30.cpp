@@ -1,23 +1,59 @@
 #include <windows.h>
 #include <iostream>
-#include <math.h>
+
 using namespace std;
-int main()
+
+int main( )
 {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-	int x, tabla;
-	cout<<"Dimme cual tabla quieres generar: ";
-	cin>>tabla;
+    char c;
+    int opcion;
 
-	for(x=1;x<11;x++){
-		cout<<tabla<<" x "<<x<<" = "<<tabla*x<<"\n";
-	}
+    cout << "Dame un valor binario 0/1: ";
+    cin >> c;
 
-	for(x=1;x<11;x++)
-		printf("%2d X %d = %3d\n",tabla,x,tabla*x);
+    switch (c)
+    {
+        case '0':
+            cout << "Falso o apagado\n";
+            break;
+        case '1':
+            cout << "Cierto o encendido\n";
+            break;
+        default:
+            cout << "Tecleaste un valor incorrecto\n";
+    }
 
-	return 0;
+    system("pause");
+    system("cls");
+
+    printf("1.- QUÍMICA\n"); // cout << "1.- QUÍMICA\n";
+    cout << "2.- FÍSICA\n";
+    printf("3.- MATEMÁTICAS\n");
+    printf("4.- RECREO\n");
+    printf("SELECCIONA UNA OPCIÓN: ");
+    cin >> opcion;
+
+    switch (opcion)
+    {
+        case 1:
+            printf("SELECCIONASTE QUÍMICA");
+            break;
+        case 2:
+            printf("SELECCIONASTE FÍSICA");
+            break;
+        case 3:
+            printf("SELECCIONASTE MATEMÁTICAS");
+            break;
+        case 4:
+            puts("SELECCIONASTE RECREO");
+            break;
+        default:
+            printf("\aSELECCIONASTE UNA OPCIÓN NO VÁLIDA");
+    }
+
+    return 0;
 }
- //Maria Jose Calderon Valenzuela 24040976
+//Maria Jose Calderon Valenzuela 24040976
